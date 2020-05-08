@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="soundboard.css" />
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="jquery/jquery-1.7.2.min.js"></script>
+	<script src="jquery/jquery-ui-1.8.20.custom.min.js"></script>
+
+	<title>Music Board</title>
+</head>
+
+<body>
+	<img id="background" src="wallpaper.jpg"></img>
+
+	<audio id="1" src="sounds/808.mp3" preload="auto"></audio>
+	<audio id="2" src="sounds/808 2.mp3" preload="auto"></audio>
+	<audio id="3" src="sounds/E Bass.mp3" preload="auto"></audio>
+	<audio id="4" src="sounds/C Sharp Bass.mp3" preload="auto"></audio>
+	<audio id="5" src="sounds/Clap.mp3" preload="auto"></audio>
+	<audio id="6" src="sounds/Crash Cymbal.mp3" preload="auto"></audio>
+	<audio id="7" src="sounds/FX.mp3" preload="auto"></audio>
+	<audio id="8" src="sounds/Hi-Hat.mp3" preload="auto"></audio>
+	<audio id="9" src="sounds/Kick.mp3" preload="auto"></audio>
+	<audio id="0" src="sounds/Claves.mp3" preload="auto"></audio>
+	<audio id="-" src="sounds/Snare.mp3" preload="auto"></audio>
+
+	<audio id="q" src="sounds/C Sharp Bass.mp3" preload="auto"></audio>
+	<audio id="w" src="sounds/E Bass.mp3" preload="auto"></audio>
+	<audio id="e" src="sounds/E Bass.mp3" preload="auto"></audio>
+	<audio id="r" src="sounds/E Bass.mp3" preload="auto"></audio>
+	<audio id="t" src="sounds/E Bass.mp3" preload="auto"></audio>
+	<audio id="y" src="sounds/E Bass.mp3" preload="auto"></audio>
+	<audio id="u" src="sounds/E Bass.mp3" preload="auto"></audio>
+	<audio id="i" src="sounds/E Bass.mp3" preload="auto"></audio>
+	<audio id="o" src="sounds/E Bass.mp3" preload="auto"></audio>
+	<audio id="p" src="sounds/E Bass.mp3" preload="auto"></audio>
+
+	<audio id="a" src="sounds/E Bass.mp3" preload="auto"></audio>
+	<audio id="s" src="sounds/E Bass.mp3" preload="auto"></audio>
+	<audio id="d" src="sounds/E Bass.mp3" preload="auto"></audio>
+	<audio id="f" src="sounds/E Bass.mp3" preload="auto"></audio>
+	<audio id="g" src="sounds/E Bass.mp3" preload="auto"></audio>
+	<audio id="h" src="sounds/E Bass.mp3" preload="auto"></audio>
+	<audio id="j" src="sounds/E Bass.mp3" preload="auto"></audio>
+	<audio id="k" src="sounds/E Bass.mp3" preload="auto"></audio>
+	<audio id="l" src="sounds/E Bass.mp3" preload="auto"></audio>
+
+	<audio id="z" src="sounds/E Bass.mp3" preload="auto"></audio>
+	<audio id="x" src="sounds/E Bass.mp3" preload="auto"></audio>
+	<audio id="c" src="sounds/E Bass.mp3" preload="auto"></audio>
+	<audio id="v" src="sounds/E Bass.mp3" preload="auto"></audio>
+	<audio id="b" src="sounds/E Bass.mp3" preload="auto"></audio>
+	<audio id="n" src="sounds/E Bass.mp3" preload="auto"></audio>
+	<audio id="m" src="sounds/E Bass.mp3" preload="auto"></audio>
+
+	<div class=" buttons-container">
+		<button class="recording-buttons" type="button" id="toggle-display-button">Hide Options</button>
+		<br><br>
+		<div id="recording-playback-container">
+			<form id="idForm" class="form">
+				<label id="formtext">Song ID:</label>
+				<input type="text" autocomplete="off" id="fname" name="fname"><br><br>
+				<input class="recording-buttons" type="submit" value="Submit">
+			</form>
+			<button class="recording-buttons" type="button" id="playback-recorded-button">Play</button>
+			<button class="recording-buttons" id="record-button"><span>Record</span></button>
+
+			<p id="display">&nbsp;</p>
+		</div>
+	</div>
+
+	<div class="musicboard">
+		<div class="board-container">
+			<div class="keypad">
+				<div class="button 1">1<br><span>808</span></div>
+				<div class="button 2">2<br><span>808 2</span></div>
+				<div class="button 3">3<br><span>E Bass</span></div>
+				<div class="button 4">4<br><span>C# Bass</span></div>
+				<div class="button 5">5<br><span>Clap</span></div>
+				<div class="button 6">6<br><span>Cymbals</span></div>
+				<div class="button 7">7<br><span>FX</span></div>
+				<div class="button 8">8<br><span>Hi-hat</span></div>
+				<div class="button 9">9<br><span>Kick</span></div>
+				<div class="button 0">0<br><span>Claves</span></div>
+				<div class="button -">-<br><span>Snare</span></div>
+			</div>
+		</div>
+		<div class="board-container">
+			<div class="keypad">
+				<div class="button q">q</div>
+				<div class="button w">w</div>
+				<div class="button e">e</div>
+				<div class="button r">r</div>
+				<div class="button t">t</div>
+				<div class="button y">y</div>
+				<div class="button u">u</div>
+				<div class="button i">i</div>
+				<div class="button o">o</div>
+				<div class="button p">p</div>
+			</div>
+		</div>
+		<div class="board-container">
+			<div class="keypad">
+				<div class="button a">a</div>
+				<div class="button s">s</div>
+				<div class="button d">d</div>
+				<div class="button f">f</div>
+				<div class="button g">g</div>
+				<div class="button h">h</div>
+				<div class="button j">j</div>
+				<div class="button k">k</div>
+				<div class="button l">l</div>
+			</div>
+		</div>
+		<div class="board-container">
+			<div class="keypad">
+				<div class="button z">z</div>
+				<div class="button x">x</div>
+				<div class="button c">c</div>
+				<div class="button v">v</div>
+				<div class="button b">b</div>
+				<div class="button n">n</div>
+				<div class="button m">m</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<script src="https://sdk.amazonaws.com/js/aws-sdk-2.16.0.min.js"></script>
+	<script src="sounds.js"></script>
+</body>
+
+</html>
