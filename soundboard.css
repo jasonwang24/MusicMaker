@@ -3,7 +3,7 @@ audio {
 }
 
 .button span {
-  font-size: 15px;
+  font-size: 13px;
   color: #0C2340;
   font-family: Arial;
 }
@@ -27,7 +27,7 @@ audio {
 
 #display {
   color: white;
-  font-size: 30px;
+  font-size: 20px;
   font-family: Arial;
   margin-bottom: 10px;
   margin-top: 20px;

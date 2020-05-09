@@ -42,11 +42,11 @@
     if (isRecording) { // stop recording
       recent_recording = events_to_string(notes_played);
 
-      tune_id = make_id(keyLength);
-      console.log(tune_id);
+      song_id = make_id(keyLength);
+      console.log(song_id);
 
       let data = {
-        "song_id": tune_id,
+        "song_id": song_id,
         "song_string": recent_recording
       };
 
@@ -59,10 +59,10 @@
         });
       });
 
-      document.getElementById("display").innerHTML = "The id for your tune is: " + tune_id;
+      document.getElementById("display").innerHTML = "The id for your song is: " + song_id;
 
       $("#display").show();
-      document.getElementById("record-button").innerHTML = "Record";
+      document.getElementById("record-button").innerHTML = "Continue Recording";
       document.getElementById("playback-recorded-button").disabled = false;
       clearInterval(update);
       seconds_passed = 0;
@@ -134,20 +134,22 @@
         "song_id": $("#fname").first().val()
       };
 
-      try {
-        fetch("https://qaz5znc10i.execute-api.us-east-1.amazonaws.com/live/getsong", {
-          method: "POST",
-          body: JSON.stringify(data)
-        }).then(res => {
-          res.json().then(function(data) {
-            playbackEvents = string_to_events(JSON.stringify(Object.values(data)[0]).replace(/"/g, ""));
+      fetch("https://qaz5znc10i.execute-api.us-east-1.amazonaws.com/live/getsong", {
+        method: "POST",
+        body: JSON.stringify(data)
+      }).then(res => {
+        res.json().then(function(data) {
+          playbackEvents = string_to_events(JSON.stringify(Object.values(data)[0]).replace(/"/g, ""));
+          try {
+            document.getElementById("display").innerHTML = "&nbsp";
             playback(playbackEvents);
-            console.log(playbackEvents);
-          });
+          } catch (err) {
+            document.getElementById("display").innerHTML = "Invalid key!";
+          }
+
         });
-      } catch (err) {
-        console.log(err);
-      }
+      });
+
       event.preventDefault();
     })
 
